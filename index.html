@@ -3,12 +3,12 @@
 
 <script>
   // OPTIONS: "downtime", "partial", "off"
-  const ONELEARN_STATUS = "partial";
+  const ONELEARN_STATUS = "Downtime"
 
   const statusBox = document.getElementById("onelearn-status");
 
   if (ONELEARN_STATUS === "downtime") {
-    statusBox.innerHTML = "🔴 <b>Downtime</b> — OneLearn is temporarily unavailable.";
+    statusBox.innerHTML = "🔴 <b>Downtime</b> — This Saturday Some Features will be unavailable.";
     statusBox.style.background = "#fee2e2";
     statusBox.style.color = "#991b1b";
   }
