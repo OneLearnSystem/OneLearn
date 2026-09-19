@@ -1,0 +1,19 @@
+ONELEARN — BLOG, STATUS & PRODUCT REFRESH
+
+OneLearn, OneBlog and OneStatus are one service: index.html, index.html#blog and index.html#status. Owner publishing desk: index.html#control.
+
+INSTALL
+1. Back up your existing OneLearn platform database. Run ONELEARN-BLOG-STATUS-UPGRADE.sql in your existing platform project nndjwqjyfgozltdoujiu. This is an upgrade; the original platform must already be installed. It does not replace school schemas, alter OneEducation or delete OneWeb data.
+2. Upload this ZIP's website files into your OneLearn repository. Keep SQL and this guide out of the public site. Files are all at the ZIP root. Remove the old OneWeb logo file from that repository if you wish; it is no longer referenced by the OneLearn product catalogue.
+3. Preserve any custom app URLs from your existing config.js. The supplied file contains your platform URL and publishable key. Never add a secret/service-role key.
+4. Hard-refresh. Sign in as your existing verified platform owner, then choose Control room. Ordinary school admins cannot publish platform news or statuses.
+
+ONEBLOG
+Create and edit posts, choose categories, attach a PNG/JPEG/WebP under 1 MB, publish/unpublish or archive. Text preserves paragraphs; HTML is escaped. New content starts as a draft. No scheduling is included.
+
+ONESTATUS
+Services are grouped with individual components. Group and overall badges display the highest-priority current component state. All initial statuses are Not reported; nursery/primary start Coming soon. No uptime claims or automated checks. Add/edit components, set operational/degraded/partial outage/downtime/maintenance, and write incident reports with affected components and optional dates. Append updates to the report's description. Component states and incident reports are independent: update both when an issue starts or ends. Maintenance dates are descriptive; they do not automatically change statuses. Public status refreshes every minute while visible. Failed loads are not shown as operational.
+
+OneNursery and OnePrimary are coming-soon catalogue entries with logos and contact-request choices. Their applications are not built in this update; no broken demo links are advertised. OneEducation, OneHome and OneSixth retain their existing links and pricing. OneWeb is removed from this site's offering, not destroyed in the database.
+
+No cross-product notification code is deployed by this ZIP. Other products can link to OneStatus; automatic in-app banners would require updating those products separately. No live site/database has been changed by this local build.
