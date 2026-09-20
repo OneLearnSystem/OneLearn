@@ -1,0 +1,40 @@
+ONELEARN — NEW LOOK & SIMPLER STATUS CONTROL
+
+INSTALL
+1. Back up your existing OneLearn platform Supabase project (nndjwqjyfgozltdoujiu).
+2. Run ONELEARN-EASY-STATUS-UPGRADE.sql in that project's SQL Editor. It includes the earlier blog/status setup, so there is only ONE script to run for this update. It preserves existing schools, posts, components and reports. Do not rerun older blog/status scripts afterwards; they would restore the previous status logic.
+3. Upload the website files from this ZIP to the root of your OneLearn repository, replacing the older OneLearn files. Keep the SQL and this text guide off the public website. No folders are inside the ZIP.
+4. Keep your existing public Supabase configuration and any customised product addresses in config.js. The supplied configuration uses your existing platform project and relative app addresses, e.g. ../OnePrimary/. Never put a secret/service-role key in these files.
+5. Hard-refresh your website after deployment. Sign in with the platform-owner account and open Control room.
+
+THE NEW STATUS FLOW
+- Control room opens Service status. Click Report issue beside an EXISTING component, such as Website. That component is selected for you.
+- Choose Performance issue, Some features unavailable, Service unavailable, Maintenance or Update in progress.
+- Tick any other affected components. You can select multiple components in one service or across different services. Select all works for a service group.
+- Enter a title/message and publish once. The report immediately changes every selected component's PUBLIC displayed status. It does not create a component.
+- Progress changes to Scheduled maintenance or Update in progress when you choose those types. Change progress manually later as work moves on.
+- Use Resolve when finished. The report remains in the history, but its effect is removed. Another active incident still takes precedence; resolving one report never hides another.
+- Drafts do not affect public status. Unpublishing or archiving a report also removes its status effect. Changing the affected selection releases components removed from the report.
+
+HOW STATUS IS CALCULATED
+Each component retains a manual baseline in Manage components. Published, unarchived reports that are not Resolved contribute an additional status. The most severe baseline/report wins: Downtime > Partial outage > Degraded > Maintenance > Update in progress > Not reported > Coming soon > Operational.
+When no reports apply, the component returns to its manual baseline. If that baseline is Not reported, resolving a report returns it to Not reported, not an invented Operational status. Set baselines in Manage components to reflect what you know. Existing manual downtime remains downtime until you change it.
+Start/end dates describe a report window only. Publishing applies the status immediately, even with a future start date; there is no scheduled worker. Resolve the report when the work finishes. OneStatus refreshes public reports every minute; it does not automatically probe websites for uptime.
+Old active reports also contribute status: Scheduled maintenance becomes Maintenance; other legacy active incidents default to Degraded. An old report with no components selected applies to its service group. New reports must explicitly select at least one component.
+
+NO MORE ACCIDENTAL COMPONENTS
+Service status is for reports. Manage components is a separate tab for the permanent list of service parts.
+The database rejects a new active component with the same service and title as an existing active one (ignoring case and surrounding spaces). Report issue always creates an INCIDENT record and uses the selected component IDs.
+Existing duplicates are retained, rather than deleted. To clean one up: Manage components > select the unwanted entry > tick Archived > Save component. Reports and other records remain in history. Resolve old reports before changing their affected component list if those components have been archived.
+
+OTHER CHANGES
+- Refreshed warm-violet OneLearn homepage, product cards and navigation.
+- OneEducation remains available; OnePrimary and OneNursery now have request/demo buttons and appear in signed-in school app links.
+- New nursery/primary pricing is not invented: access details are confirmed on request. Existing OneEducation, OneHome and OneSixth prices remain unchanged.
+- Deploy OnePrimary/OneNursery separately before relying on their links. Listing a product does not deploy it. Their old Coming soon status baselines become Not reported; no uptime claim is made.
+- Contact requests accept all five products together.
+- OneBlog, OneStatus and the owner control room remain parts of the same OneLearn service. Blog publishing, invitations, school setup and account recovery are retained.
+
+CHECKS
+Local database/browser tests cover three-component reports across services, unchanged component counts, duplicate protection, maintenance and update status, overlapping reports, resolution, drafts, changing affected selections, archival, stale edits, owner-only writes, public status, owner sign-in, blog publishing and mobile layout.
+No live Supabase or GitHub deployment was performed. Test the uploaded version with a draft first, then a short public maintenance report and resolve it to confirm your setup.
