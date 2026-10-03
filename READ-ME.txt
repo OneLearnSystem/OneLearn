@@ -1,0 +1,25 @@
+ONELEARN — MINIMAL HOMEPAGE & SERVICE FAMILY REFRESH
+
+OneLearn-Minimal-Concept.png is the revised visual concept. It removes the busy
+screen collage, simplifies the product cards and keeps OneBlog and OneStatus.
+There is no Control Room in the design. This is not a working or published site.
+
+NEW TRANSPARENT LOGOS
+OneSixth-Logo.png — muted rose
+OnePrimary-Logo.png — pale blue
+OneNursery-Logo.png — warm yellow
+OneLearn-Logo.png — the navy/amber logo from the previous design
+
+The three numbered Markdown files are finished blog copy for you to review and
+publish. They have not been posted online. The ONE EDUCATE post describes the
+built update as ready for rollout; the other posts clearly label future work.
+
+The ONE EDUCATE favicon files from the previous pack are included for convenience.
+Upload favicon.svg to replace the old file in the ONE EDUCATE repository. This
+does not change app functionality. Reopen the browser tab after deployment.
+
+All images were made with the built-in image-generation tool. Prompts.txt records
+the prompts. The supplied original logos have not been overwritten.
+
+Next stage: ONE HOME interface mockups, followed by the remaining service refreshes.
+No service code, database, live website or school data was changed in this step.
