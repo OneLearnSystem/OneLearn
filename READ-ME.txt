@@ -1,0 +1,37 @@
+ONELEARN — WORKING HOMEPAGE & BLOG PAGES
+
+Upload all files from this ZIP to the root of your OneLearn GitHub repository.
+The ZIP contains files only, with no folders. Back up your existing files first.
+Replace matching files. The homepage is index.html.
+
+PAGES
+index.html — new minimal homepage
+blog.html — three new articles
+blog-one-educate.html, blog-onelearn.html, blog-one-home.html — complete posts
+contact.html — existing Supabase contact-request connection
+portals.html — service portal chooser
+portal.html — existing account, invitations and authorised school access tools
+status.html — your existing live OneStatus reports
+setup.html — existing school setup
+
+CONFIGURATION
+Existing Supabase URL, publishable key and service identifiers are preserved.
+If your deployed config.js has newer values or different repository URLs, retain
+those values. config.js -> apps controls the destination of each product link.
+ONE EDUCATE is still internally identified as OneEducation for compatibility.
+
+SQL
+No NEW SQL is required for this update. Existing OneLearn account, contact and
+OneStatus database functions must already be installed, as on your existing site.
+The three new articles are local HTML pages, so they need no database import.
+They become public when you upload this website. No posts have been published
+to your live database, and this package has not been deployed.
+
+The public Control Room navigation has been removed. Existing private school
+access and publishing tools remain available after authorised owner sign-in;
+server permissions have not been changed. Older database posts are accessible
+from the OneBlog archive link. Existing bookmarked routes are supported.
+
+Use GitHub Pages or a local web server to test account/status/contact features.
+Opening index.html directly will display the page, but browsers may block local
+JavaScript modules. Other service websites are not redesigned by this package.
